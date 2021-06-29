@@ -6,12 +6,17 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>250 226 19 19</string>
+                <string>211 219 97 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Result</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>bool:applicable</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
