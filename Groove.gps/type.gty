@@ -6,17 +6,27 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>228 329 90 54</string>
+                <string>255 329 35 54</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>399 339 62 36</string>
+                <string>397 331 62 54</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>610 318 90 90</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:mark</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -31,12 +41,55 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
+                <string>flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
                 <string>int:weight</string>
             </attr>
         </edge>
         <edge from="n1" to="n0">
             <attr name="label">
                 <string>edge</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>used</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 430 357 539 358 430 357 11</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Result</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:error</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:fail</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:success</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:component</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:maxclique</string>
             </attr>
         </edge>
     </graph>

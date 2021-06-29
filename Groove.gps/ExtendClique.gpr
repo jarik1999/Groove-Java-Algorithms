@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="IsComplete">
+    <graph role="rule" edgeids="false" edgemode="directed" id="ExtendClique">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>220 284 11 18</string>
+                <string>281 361 8 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>202 424 33 18</string>
+                <string>266 456 42 54</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>310 426 33 18</string>
+                <string>430 361 11 18</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>379 289 8 18</string>
+                <string>417 458 33 36</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>366 354 30 18</string>
+                <string>562 360 8 18</string>
             </attr>
         </node>
-        <node id="n7">
+        <node id="n5">
             <attr name="layout">
-                <string>473 357 33 18</string>
+                <string>538 543 30 18</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>622 364 160 36</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>forall:</string>
+                <string>exists:</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -44,59 +49,84 @@
                 <string>type:Node</string>
             </attr>
         </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>new:flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>not:flag:mark</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n0">
             <attr name="label">
                 <string>@</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
-            <attr name="label">
-                <string>!=</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
-                <string>type:Node</string>
+                <string>forall:</string>
             </attr>
         </edge>
         <edge from="n2" to="n0">
             <attr name="label">
-                <string>@</string>
+                <string>in</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
-                <string>exists:</string>
+                <string>type:Node</string>
             </attr>
         </edge>
-        <edge from="n3" to="n0">
+        <edge from="n3" to="n3">
             <attr name="label">
-                <string>in</string>
+                <string>flag:mark</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>type:Edge</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n1">
-            <attr name="label">
-                <string>edge</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n3">
+        <edge from="n3" to="n2">
             <attr name="label">
                 <string>@</string>
             </attr>
         </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>exists:</string>
+            </attr>
+        </edge>
         <edge from="n4" to="n2">
+            <attr name="label">
+                <string>in</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:Edge</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n4">
+            <attr name="label">
+                <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n3">
             <attr name="label">
                 <string>edge</string>
             </attr>
         </edge>
-        <edge from="n7" to="n7">
+        <edge from="n5" to="n1">
             <attr name="label">
-                <string>type:Node</string>
+                <string>edge</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:Result</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>let:maxclique = maxclique + 1</string>
             </attr>
         </edge>
     </graph>

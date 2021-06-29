@@ -1,5 +1,5 @@
 try {
-	hasCycle();
+	HasCycle;
 	SetResultTrue;
 } else {
 	SetResultFalse;

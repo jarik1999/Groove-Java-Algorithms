@@ -1,0 +1,52 @@
+recipe SCC() {
+	DeleteComponent;
+	alap DeleteComponent;
+	SetResultTrue;
+}
+
+recipe HasCycle() {
+	MarkCycleEdge;
+	RemoveCycleEdge;
+	MarkedPath;
+	AddCycleEdge;
+	SetResultTrue;
+}
+
+recipe MST() {
+	IsConnected;
+	alap AddEdgeSpanningTree;
+	alap RemoveUnused;
+	SetResultTrue;
+}
+
+recipe IsTree() {
+	IsConnected;
+	try {
+		HasCycle();
+	} else {
+		SetResultTrue;
+	}
+}
+
+recipe IsForest() {
+	try {
+		HasCycle();
+	} else {
+		SetResultTrue;
+	}
+}
+
+recipe HasOddCycle() {
+	MarkCycleEdge;
+	RemoveCycleEdge;
+	MarkedPathEven;
+	AddCycleEdge;
+}
+
+recipe IsBipartite() {
+	try {
+		HasOddCycle();
+	} else {
+		SetResultTrue;
+	}
+}

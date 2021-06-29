@@ -9,17 +9,57 @@
                 <string>327 250 30 36</string>
             </attr>
         </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>del:</string>
+        <node id="n1">
+            <attr name="layout">
+                <string>241 362 33 36</string>
             </attr>
-        </edge>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>391 357 33 36</string>
+            </attr>
+        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Edge</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>del:edge</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>del:edge</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>!=</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>flag:mark</string>
             </attr>

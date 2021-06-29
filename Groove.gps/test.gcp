@@ -1,5 +1,0 @@
-function hasCycle() {
-	MarkCycleEdge;
-	RemoveCycleEdge;
-	MarkedPath;
-}

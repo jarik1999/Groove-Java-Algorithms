@@ -29,7 +29,7 @@
                 <string>!=</string>
             </attr>
             <attr name="layout">
-                <string>463 18 338 358 473 358 11</string>
+                <string>533 -1 338 354 473 354 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -37,7 +37,7 @@
                 <string>(-edge.edge)*</string>
             </attr>
             <attr name="layout">
-                <string>471 -15 337 353 473 350 11</string>
+                <string>533 -1 338 354 473 354 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

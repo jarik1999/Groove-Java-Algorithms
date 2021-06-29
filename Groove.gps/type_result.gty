@@ -16,7 +16,17 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>bool:applicable</string>
+                <string>flag:error</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:fail</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:success</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">

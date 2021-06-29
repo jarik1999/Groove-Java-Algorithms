@@ -34,16 +34,6 @@
                 <string>459 217 25 18</string>
             </attr>
         </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>636 237 30 18</string>
-            </attr>
-        </node>
-        <node id="n8">
-            <attr name="layout">
-                <string>635 357 33 18</string>
-            </attr>
-        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>forall:</string>
@@ -79,14 +69,14 @@
                 <string>type:Edge</string>
             </attr>
         </edge>
-        <edge from="n3" to="n0">
-            <attr name="label">
-                <string>@</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n2">
             <attr name="label">
                 <string>edge</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n0">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
@@ -107,17 +97,17 @@
                 <string>454 3 458 433 239 353 11</string>
             </attr>
         </edge>
+        <edge from="n5" to="n0">
+            <attr name="label">
+                <string>@</string>
+            </attr>
+        </edge>
         <edge from="n5" to="n3">
             <attr name="label">
                 <string>!=</string>
             </attr>
             <attr name="layout">
-                <string>528 -14 438 433 317 433 11</string>
-            </attr>
-        </edge>
-        <edge from="n5" to="n0">
-            <attr name="label">
-                <string>@</string>
+                <string>528 -14 458 433 297 433 11</string>
             </attr>
         </edge>
         <edge from="n5" to="n2">
@@ -133,29 +123,6 @@
         <edge from="n4" to="n0">
             <attr name="label">
                 <string>in</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n6">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n6">
-            <attr name="label">
-                <string>type:Edge</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n8">
-            <attr name="label">
-                <string>edge</string>
-            </attr>
-            <attr name="layout">
-                <string>556 -22 655 262 656 354 11</string>
-            </attr>
-        </edge>
-        <edge from="n8" to="n8">
-            <attr name="label">
-                <string>type:Node</string>
             </attr>
         </edge>
     </graph>
