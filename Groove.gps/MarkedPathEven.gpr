@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="Path">
+    <graph role="rule" edgeids="false" edgemode="directed" id="MarkedPathEven">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>301 315 33 18</string>
+                <string>142 397 33 36</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>528 316 33 18</string>
+                <string>390 405 33 18</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -19,25 +19,35 @@
                 <string>type:Node</string>
             </attr>
         </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>(-edge.edge.-edge.edge)*</string>
+            </attr>
+            <attr name="layout">
+                <string>565 -18 181 411 387 414 11</string>
+            </attr>
+        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>not:=</string>
             </attr>
             <attr name="layout">
-                <string>494 12 339 328 523 329 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>(-edge.edge)*</string>
-            </attr>
-            <attr name="layout">
-                <string>461 -14 339 320 523 321 11</string>
+                <string>485 17 181 419 387 422 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:mark</string>
             </attr>
         </edge>
     </graph>

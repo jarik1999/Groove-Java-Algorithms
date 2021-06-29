@@ -6,12 +6,17 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>323 324 33 18</string>
+                <string>323 314 33 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>439 315 19 19</string>
+                <string>432 315 33 18</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>537 303 90 36</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -22,6 +27,16 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Result</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>let:component = 0</string>
             </attr>
         </edge>
     </graph>

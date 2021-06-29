@@ -6,12 +6,27 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>250 226 19 19</string>
+                <string>214 199 90 72</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Result</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:error</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:fail</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:success</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">

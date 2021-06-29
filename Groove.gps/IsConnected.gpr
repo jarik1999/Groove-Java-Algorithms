@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="IsComplete">
+    <graph role="rule" edgeids="false" edgemode="directed" id="IsConnected">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>220 284 11 18</string>
+                <string>278 323 11 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>202 424 33 18</string>
+                <string>418 319 25 18</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>310 426 33 18</string>
+                <string>187 476 33 18</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>379 289 8 18</string>
-            </attr>
-        </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>366 354 30 18</string>
-            </attr>
-        </node>
-        <node id="n7">
-            <attr name="layout">
-                <string>473 357 33 18</string>
+                <string>376 477 33 18</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -41,17 +31,17 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:Node</string>
+                <string>exists=x:</string>
             </attr>
         </edge>
         <edge from="n1" to="n0">
             <attr name="label">
-                <string>@</string>
+                <string>in</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
+        <edge from="n2" to="n3">
             <attr name="label">
-                <string>!=</string>
+                <string>exists=x:(-edge.edge)*</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -64,37 +54,12 @@
                 <string>@</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>exists:</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n0">
-            <attr name="label">
-                <string>in</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n4">
-            <attr name="label">
-                <string>type:Edge</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n1">
-            <attr name="label">
-                <string>edge</string>
-            </attr>
-        </edge>
-        <edge from="n4" to="n3">
             <attr name="label">
                 <string>@</string>
             </attr>
         </edge>
-        <edge from="n4" to="n2">
-            <attr name="label">
-                <string>edge</string>
-            </attr>
-        </edge>
-        <edge from="n7" to="n7">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Node</string>
             </attr>
