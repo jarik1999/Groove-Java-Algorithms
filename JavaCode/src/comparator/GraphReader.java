@@ -37,7 +37,7 @@ public class GraphReader {
     public static <N extends datastructures.Node, E extends Edge>
     Graph readGraph(String filename, Path dir, Generics<N, E> INST)
             throws IOException, SAXException, ParserConfigurationException {
-        readGraph(dir.resolve(filename), INST);
+        return readGraph(dir.resolve(filename), INST);
     }
     public static <N extends datastructures.Node, E extends Edge>
     Graph readGraph(Path file, Generics<N, E> INST)

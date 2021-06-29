@@ -45,6 +45,7 @@ public class Compare<C extends Condition>{
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
+        return false;
     }
     public void setRule() throws IOException {
         ControlEditor.setRule(this.condition.getConditionName());
