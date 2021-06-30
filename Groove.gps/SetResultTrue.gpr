@@ -6,7 +6,12 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>256 169 19 19</string>
+                <string>216 162 97 32</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>265 237 25 16</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -14,9 +19,14 @@
                 <string>type:Result</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n1">
             <attr name="label">
-                <string>new:flag:success</string>
+                <string>new:success</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>bool:true</string>
             </attr>
         </edge>
     </graph>

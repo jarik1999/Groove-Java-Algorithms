@@ -1,6 +1,14 @@
 try {
-	HasCycle;
+	FindResultNode;
+} else {
+	AddResultNode;
+}
+
+try {
+	IsSimple;
 	SetResultTrue;
 } else {
 	SetResultFalse;
 }
+
+Done;

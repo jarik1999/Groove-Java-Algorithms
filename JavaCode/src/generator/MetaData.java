@@ -1,3 +1,5 @@
+package generator;
+
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -53,9 +55,9 @@ public class MetaData {
     }
 
     public void setMeta() throws ParserConfigurationException, TransformerException, SAXException, IOException {
-        File f = Path.of("generator.gps/TrivialTest.gst").toFile();
-        File dest = Path.of("generator.gps/result.gst").toFile();
-//        MetaEditor.MetaData meta = new MetaEditor.MetaData(-1, 5, 5);
+        File f = Path.of("../generator.gps/TrivialTest.gst").toFile();
+        File dest = Path.of("../generator.gps/result.gst").toFile();
+//        MetaEditor.generator.MetaData meta = new MetaEditor.generator.MetaData(-1, 5, 5);
         setMeta(f, dest);
     }
 

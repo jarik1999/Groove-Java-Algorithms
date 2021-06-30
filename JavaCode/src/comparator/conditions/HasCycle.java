@@ -24,26 +24,6 @@ public class HasCycle implements Condition {
         return false;*/
     }
 
-    private boolean dfs(String node, String parent, HashMap<String, HashSet<String>> neighbours, HashSet<String> visited) {
-        if (visited.contains(node)) {
-            return true;
-        }
-
-        for (String neighbour: neighbours.get(node)) {
-            if (neighbour.equals(parent)) {
-                continue;
-            }
-
-            visited.add(node);
-            if (dfs(neighbour, node, neighbours, visited)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-
     @Override
     public String getConditionName() {
         return "HasCycle";

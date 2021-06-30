@@ -12,6 +12,15 @@ recipe HasCycle() {
 	SetResultTrue;
 }
 
+recipe HasNoCycle() {
+	try {
+		HasCycle;
+		NeverTrue;
+	} else {
+		!NeverTrue;
+	}
+}
+
 recipe MST() {
 	IsConnected;
 	alap AddEdgeSpanningTree;
@@ -21,19 +30,11 @@ recipe MST() {
 
 recipe IsTree() {
 	IsConnected;
-	try {
-		HasCycle();
-	} else {
-		SetResultTrue;
-	}
+	HasNoCycle();
 }
 
 recipe IsForest() {
-	try {
-		HasCycle();
-	} else {
-		SetResultTrue;
-	}
+	HasNoCycle();
 }
 
 recipe HasOddCycle() {

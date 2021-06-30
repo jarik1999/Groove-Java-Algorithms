@@ -19,10 +19,12 @@ public class Runner {
     private Map<String, List<String>> args = new HashMap<>();
     private Map<String, List<String>> argsOnce = new HashMap<>();
     private final String JAVA_LOC;
-    private final String filename = String.join(sep, "..","Groove.gps");
+    private String filename = String.join(sep, "..","Groove.gps");
     private final String[] jar = new String[]{"-jar", String.join(sep, "..", "..", "..", "bin", "Generator.jar")};
 
-    public Runner() {
+    public Runner(String grooveName) {
+        if (!grooveName.endsWith(".gps")) grooveName+=".gps";
+        filename=String.join(sep, "..", grooveName);
         if (System.getProperty("os.name").equals("Mac OS X")) {
             JAVA_LOC = "/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/bin/java";
         } else {//windows
@@ -42,29 +44,41 @@ public class Runner {
         argsOnce.put(key, vals);
     }
 
-    public void run() throws IOException, InterruptedException {
+    public long[] run() throws IOException, InterruptedException {
         String[] command = unite();
+//        System.out.println(String.join(" ",command));
         Runtime rt = Runtime.getRuntime();
+        long starttime = System.currentTimeMillis();
         //run the command
         final Process p = rt.exec(command);
         //collect output
         BufferedReader brE = new BufferedReader(new InputStreamReader(p.getErrorStream()));
         BufferedReader brO = new BufferedReader(new InputStreamReader(p.getInputStream()));
         p.waitFor();
+        long endtime = System.currentTimeMillis();
         //if silent, dont do output
-        if (SILENT) return;
-        while (true){
-            String line;
-            if (brE.ready()) {
-                line = brE.readLine();
-            } else if (brO.ready()){
-                line = brO.readLine();
-//                if (line.startsWith("State saved:")) continue;
-            } else break;
-//            if (line == null) break;
-            System.out.println(line);
+
+        List<String> errs = new ArrayList<>(),
+                out = new ArrayList<>();
+        while(brE.ready()){
+            errs.add(brE.readLine());
         }
-        System.out.println("exit code:"+ p.exitValue());
+        while (brO.ready()) {
+            out.add(brO.readLine());
+        }
+        long runTime = -1;
+        String start = "Time (ms):";
+        for (String line : out) {
+            if (line.startsWith(start)){
+                runTime = Long.parseLong(line.substring(start.length()).strip());
+            }
+        }
+        if (!SILENT || p.exitValue()!=0) {
+            System.err.println(String.join("\n",errs));
+            System.out.println(String.join("\n",out));
+            System.out.println("exit code:" + p.exitValue());
+        }
+        return new long[]{endtime-starttime, runTime};
     }
 
     private String[] unite() {
@@ -86,10 +100,10 @@ public class Runner {
         argsOnce.clear();
         String[] argArray = arguments.toArray(new String[0]);
         //now construct the entire command
-        String[] command = new String[4+arguments.size()];
+        String[] command = new String[4+argArray.length];
         command[0]=JAVA_LOC;
         System.arraycopy(jar, 0, command, 1, jar.length);
-        System.arraycopy(argArray, 0, command, 1+jar.length, command.length);
+        System.arraycopy(argArray, 0, command, 1+jar.length, argArray.length);
         command[command.length-1]=filename;
         return command;
     }

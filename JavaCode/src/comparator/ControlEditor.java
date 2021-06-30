@@ -1,5 +1,7 @@
 package comparator;
 
+import comparator.conditions.Condition;
+
 import java.io.*;
 import java.nio.Buffer;
 import java.nio.file.Path;
@@ -12,11 +14,20 @@ public class ControlEditor {
     private static final Path MAIN_CONTROL = GROOVE_DIR.resolve("RunRule.gcp");
     private static final String bool_prog = """
             try {
+            \tFindResultNode;
+            } else {
+            \tAddResultNode;
+            }
+
+            try {
             \t%s;
             \tSetResultTrue;
             } else {
             \tSetResultFalse;
-            }""";
+            }
+            
+            Done;
+            """;
     public static List<String> ruleNames = List.of("IsComplete",
             "isConnectedCondition",
             "IsEmpty",
@@ -24,7 +35,9 @@ public class ControlEditor {
             "IsTrivial",
             "NotEmpty",
             "HasCycle()");
-
+    public static void setRule(Condition C) throws IOException {
+        setRule(C.getConditionName());
+    }
     public static void setRule(String ruleName) throws IOException {
         try (FileWriter x = (new FileWriter(MAIN_CONTROL.toFile(), false))) {
             x.write(String.format(bool_prog, ruleName));
