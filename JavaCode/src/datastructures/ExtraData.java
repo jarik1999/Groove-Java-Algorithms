@@ -62,7 +62,7 @@ public class ExtraData {
             case "int" -> {
                 data.put(name, new DataValue(Integer.parseInt(value)));
             }
-            case "boolean" -> {
+            case "bool" -> {
                 data.put(name, new DataValue(Boolean.parseBoolean(value)));
             }
             default -> {
@@ -75,10 +75,10 @@ public class ExtraData {
         STRING, INT, BOOL;
     }
     public class DataValue {
-        final DataValueEnum type;
-        final String stringValue;
-        final int intValue;
-        final boolean boolValue;
+        public final DataValueEnum type;
+        public final String stringValue;
+        public final int intValue;
+        public final boolean boolValue;
 
         public DataValue(String stringValue) {
             this.type = DataValueEnum.STRING;

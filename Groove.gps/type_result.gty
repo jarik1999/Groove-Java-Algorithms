@@ -6,7 +6,7 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>211 219 97 32</string>
+                <string>211 203 97 64</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -16,17 +16,17 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
+                <string>flag:done</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
                 <string>flag:error</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>flag:fail</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>flag:success</string>
+                <string>bool:sucess</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">

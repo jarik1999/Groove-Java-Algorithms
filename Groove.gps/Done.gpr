@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="SetResultFalse">
+    <graph role="rule" edgeids="false" edgemode="directed" id="Done">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>156 332 102 32</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>334 397 30 16</string>
+                <string>137 67 51 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -19,14 +14,9 @@
                 <string>type:Result</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>new:success</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>bool:false</string>
+                <string>new:flag:done</string>
             </attr>
         </edge>
     </graph>
