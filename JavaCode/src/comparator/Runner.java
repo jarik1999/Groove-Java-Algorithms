@@ -26,7 +26,7 @@ public class Runner {
         if (System.getProperty("os.name").equals("Mac OS X")) {
             JAVA_LOC = "/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/bin/java";
         } else {//windows
-            JAVA_LOC = "IDK";
+            JAVA_LOC = "C:\\Users\\jarik\\Documents\\Master\\Module 4\\Software Science\\groove-5_7_4\\bin";
         }
 
     }
