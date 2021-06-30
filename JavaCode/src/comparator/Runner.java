@@ -19,10 +19,12 @@ public class Runner {
     private Map<String, List<String>> args = new HashMap<>();
     private Map<String, List<String>> argsOnce = new HashMap<>();
     private final String JAVA_LOC;
-    private final String filename = String.join(sep, "..","Groove.gps");
+    private String filename = String.join(sep, "..","Groove.gps");
     private final String[] jar = new String[]{"-jar", String.join(sep, "..", "..", "..", "bin", "Generator.jar")};
 
-    public Runner() {
+    public Runner(String grooveName) {
+        if (!grooveName.endsWith(".gps")) grooveName+=".gps";
+        filename=String.join(sep, "..", grooveName);
         if (System.getProperty("os.name").equals("Mac OS X")) {
             JAVA_LOC = "/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/bin/java";
         } else {//windows
@@ -44,6 +46,7 @@ public class Runner {
 
     public long[] run() throws IOException, InterruptedException {
         String[] command = unite();
+//        System.out.println(String.join(" ",command));
         Runtime rt = Runtime.getRuntime();
         long starttime = System.currentTimeMillis();
         //run the command

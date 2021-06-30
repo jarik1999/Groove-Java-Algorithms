@@ -1,7 +1,6 @@
 package comparator;
 
-import comparator.conditions.Condition;
-import comparator.conditions.Trivial;
+import comparator.conditions.*;
 import datastructures.ExtraData;
 import datastructures.Graph;
 import datastructures.ResultConstructors;
@@ -20,9 +19,19 @@ import static comparator.Runner.SILENT;
 
 public class Compare<C extends Condition>{
     public static void main(String[] args) throws IOException {
+        long start = System.currentTimeMillis();
         SILENT=true;
-        Condition[] CS = new Condition[]{new Trivial()};
-        File dir = new File(String.join(sep, "..", "Groove.gps", "generated"));
+        Condition[] CS = new Condition[]{
+                /*new Trivial(),*/
+//                new Forest(),
+                /* new Empty(),*/
+                new HasCycle(),
+//                new Tree(),
+                new Simple(),
+                new Connected()
+        };
+//        CS = new Condition[]{new Forest()};//, new Empty(), new HasCycle(), new Tree(), new Simple(), new Connected()};
+        File dir = new File(String.join(sep, "..", "Groove.gps", "large"));//"large"));
         File[] list = dir.listFiles();
         assert list != null;
         list = Arrays.stream(list).filter(f-> f.getName().endsWith(".gst")).toArray(File[]::new);
@@ -35,8 +44,9 @@ public class Compare<C extends Condition>{
             Results r = new Results(list, results);
             r.printReport();
             r.toFile(C.getConditionName());
-            System.out.println("Total Time "+(System.currentTimeMillis()-mili)+" ms");
+            System.out.println("Time of "+C.getConditionName()+ " is " +(System.currentTimeMillis()-mili)+" ms");
         }
+        System.out.println("Total time "+(System.currentTimeMillis()-start)/1000 + " s");
     }
 
     private static final File TMP = new File("tmp/resultGraph.gst");
@@ -46,7 +56,7 @@ public class Compare<C extends Condition>{
     public Compare(C condition){
         this.condition = condition;
         //prepare command
-        r = new Runner();
+        r = new Runner("Groove");
         //need to have controlProgram=RunRule & SCC, but idk how
 //        r.addArg("-D", "controlProgram=RunRule");
         r.addArg("-r", "1"); //one result is enough
@@ -64,8 +74,10 @@ public class Compare<C extends Condition>{
 
     public long[] compare(File file) {
         String prefix = "";
-        if (file.getParentFile().getName().equals("generated")){
-            prefix = "generated.";
+        File tmp = file.getParentFile();
+        while (!tmp.getName().equals("Groove.gps")){
+            prefix = tmp.getName()+'.'+prefix;
+            tmp = tmp.getParentFile();
         }
         try {
             // graph to test with
@@ -86,6 +98,7 @@ public class Compare<C extends Condition>{
             System.out.println("Java: "+javaTime +" ns, Groove: "+ runTimes[1] +" ms, Groove total: "+runTimes[0]+" ms");
             if (r1!=r2){
                 System.out.println("Condition "+condition.getConditionName()+" differs on graph "+file.getName());
+                System.out.println("Groove says "+r1+" but Java says "+r2);
             }
             return new long[]{javaTime, runTimes[1], runTimes[0]};
         } catch (ParserConfigurationException | SAXException | IOException | InterruptedException e) {

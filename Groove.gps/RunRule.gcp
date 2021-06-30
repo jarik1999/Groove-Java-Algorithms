@@ -5,7 +5,7 @@ try {
 }
 
 try {
-	IsTrivial;
+	IsSimple;
 	SetResultTrue;
 } else {
 	SetResultFalse;

@@ -9,5 +9,5 @@
             </attr>
         </node>
         
-    <edge from="n0" to="n0"><attr name="label"><string>type:Meta</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:nodes = 0</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:edges = 0</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:rng = 68</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:maxNodes = 10</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:maxEdges = 10</string></attr></edge></graph>
+    <edge from="n0" to="n0"><attr name="label"><string>type:Meta</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:nodes = 0</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:edges = 0</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:rng = 78</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:maxNodes = 53</string></attr></edge><edge from="n0" to="n0"><attr name="label"><string>let:maxEdges = 265</string></attr></edge></graph>
 </gxl>
