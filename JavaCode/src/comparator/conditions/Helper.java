@@ -23,4 +23,14 @@ public class Helper {
         }
         return neighbours;
     }
+
+    public static void dfs(String node, HashMap<String, HashSet<String>> neighbours, HashSet<String> visited) {
+        if (visited.contains(node)) {
+            return;
+        }
+        visited.add(node);
+        for (String neighbour: neighbours.get(node)) {
+            dfs(neighbour, neighbours, visited);
+        }
+    }
 }

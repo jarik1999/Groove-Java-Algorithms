@@ -13,19 +13,11 @@ public class Connected implements Condition {
         }
         HashSet<String> visited = new HashSet<>();
         HashMap<String, HashSet<String>> neighbours = Helper.getNeighbours(G);
-        dfs(G.getNodes().get(0).getId(), neighbours, visited);
+        Helper.dfs(G.getNodes().get(0).getId(), neighbours, visited);
         return visited.size() == G.getNodes().size();
     }
 
-    private void dfs(String node, HashMap<String, HashSet<String>> neighbours, HashSet<String> visited) {
-        if (visited.contains(node)) {
-            return;
-        }
-        visited.add(node);
-        for (String neighbour: neighbours.get(node)) {
-            dfs(neighbour, neighbours, visited);
-        }
-    }
+
 
     @Override
     public String getConditionName() {

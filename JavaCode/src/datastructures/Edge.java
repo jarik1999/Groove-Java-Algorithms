@@ -3,7 +3,7 @@ package datastructures;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Edge {
+public class Edge implements Comparable<Edge> {
     private final int weight;
     private final Node n1, n2;
     private final String id;
@@ -62,4 +62,10 @@ public class Edge {
                 "] weight=" + weight +
                 '}';
     }
+
+    @Override
+    public int compareTo(Edge o) {
+        return Integer.compare(this.weight, o.weight);
+    }
+
 }
