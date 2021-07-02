@@ -1,4 +1,4 @@
-files = ['IsEmpty.csv', 'IsSimple.csv', 'IsForest.csv', 'IsTree.csv', 'HasCycle.csv', 'IsConnected.csv']
+files = ['IsEmpty.csv', 'IsSimple.csv', 'IsForest.csv', 'IsTree.csv', 'HasCycle.csv', 'IsConnected.csv', "IsComplete.csv"]
 
 # Graph name, Java time, Groove think time, Groove time
 

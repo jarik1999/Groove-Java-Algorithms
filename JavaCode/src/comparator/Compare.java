@@ -25,11 +25,13 @@ public class Compare<C extends Condition>{
                 /*new Trivial(),*/
 //                new Forest(),
                 /* new Empty(),*/
-                new HasCycle(),
+//                new HasCycle(),
 //                new Tree(),
-                new Simple(),
-                new Connected()
+//                new Simple(),
+//                new Connected(),
+                new Complete()
         };
+
 //        CS = new Condition[]{new Forest()};//, new Empty(), new HasCycle(), new Tree(), new Simple(), new Connected()};
         File dir = new File(String.join(sep, "..", "Groove.gps", "large"));//"large"));
         File[] list = dir.listFiles();

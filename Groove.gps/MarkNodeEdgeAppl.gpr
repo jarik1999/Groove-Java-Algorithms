@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="MarkNodeEdge">
+    <graph role="rule" edgeids="false" edgemode="directed" id="MarkNodeEdgeAppl">
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -11,17 +11,12 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>433 237 46 48</string>
+                <string>436 245 40 32</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Node</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>new:flag:mark</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -37,11 +32,6 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Edge</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>new:flag:mark</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

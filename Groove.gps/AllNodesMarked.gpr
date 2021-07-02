@@ -4,49 +4,163 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n4">
+            <attr name="layout">
+                <string>144 484 40 32</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>333 485 40 32</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>233 374 8 16</string>
+            </attr>
+        </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>392 373 27 16</string>
+            </attr>
+        </node>
         <node id="n1">
             <attr name="layout">
-                <string>332 194 11 18</string>
+                <string>139 312 35 32</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>157 227 8 16</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>312 265 47 36</string>
+                <string>320 226 7 16</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>427 194 25 18</string>
+                <string>305 318 40 32</string>
             </attr>
         </node>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>not:flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>exists=x:=</string>
+            </attr>
+            <attr name="layout">
+                <string>444 17 189 504 360 504 11</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>(-edge.edge)+</string>
+            </attr>
+            <attr name="layout">
+                <string>484 -11 164 500 0 0 354 493 11</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n6">
+            <attr name="label">
+                <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>(-edge.edge)*</string>
+            </attr>
+            <attr name="layout">
+                <string>520 -12 189 496 360 496 11</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>not:flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n6">
+            <attr name="label">
+                <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>forall:</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>exists=x:</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n6">
+            <attr name="label">
+                <string>in</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:mark</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>@</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>forall:</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
-                <string>type:Node</string>
+                <string>exists:</string>
             </attr>
         </edge>
-        <edge from="n2" to="n2">
+        <edge from="n2" to="n0">
             <attr name="label">
-                <string>exists=x:flag:mark</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n1">
-            <attr name="label">
-                <string>@</string>
+                <string>in</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
-                <string>exists=x:</string>
+                <string>type:Node</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>not:flag:mark</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
             <attr name="label">
-                <string>in</string>
+                <string>(-edge.edge)*</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n2">
+            <attr name="label">
+                <string>@</string>
             </attr>
         </edge>
     </graph>

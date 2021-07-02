@@ -9,10 +9,10 @@ import java.util.HashSet;
 public class HasCycle implements Condition {
     @Override
     public boolean run(Graph G) {
-        Condition connected = new Connected();
-        return connected.run(G) && (G.getEdges().size() >= G.getNodes().size());
+//        Condition connected = new Connected();
+//        return connected.run(G) && (G.getEdges().size() >= G.getNodes().size());
 
-        /*HashMap<String, HashSet<String>> neighbours = Helper.getNeighbours(G);
+        HashMap<String, HashSet<String>> neighbours = Helper.getNeighbours(G);
         HashSet<String> visited = new HashSet<>();
         for (Node node: G.getNodes()) {
             if (!visited.contains(node.getId())) {
@@ -21,7 +21,22 @@ public class HasCycle implements Condition {
                 }
             }
         }
-        return false;*/
+        return false;
+    }
+    private boolean dfs(String node, String parent, HashMap<String, HashSet<String>> neighbours, HashSet<String> visited) {
+        if (visited.contains(node)) {
+            return true;
+        }
+        visited.add(node);
+        for (String neighbour: neighbours.get(node)) {
+            if (neighbour.equals(parent)) {
+                continue;
+            }
+            if (dfs(neighbour, node, neighbours, visited)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
